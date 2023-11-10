@@ -39,27 +39,27 @@
             this.Department = new System.Windows.Forms.Label();
             this.TermOrSem = new System.Windows.Forms.Label();
             this.ViolationDesc = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.ViolationReasonBox = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.nextPage = new System.Windows.Forms.Button();
             this.NameTextBox = new System.Windows.Forms.TextBox();
             this.IdTextBox = new System.Windows.Forms.TextBox();
             this.EmailTextBox = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.FacultyName = new System.Windows.Forms.TextBox();
+            this.CourseNameAndNum = new System.Windows.Forms.TextBox();
+            this.AssignmentNumOrExam = new System.Windows.Forms.TextBox();
+            this.DepartmentStudent = new System.Windows.Forms.TextBox();
+            this.TermOrSemester = new System.Windows.Forms.TextBox();
+            this.FacultyMemberName = new System.Windows.Forms.TextBox();
+            this.FacultyDate = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.SubmitBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Name
@@ -154,13 +154,13 @@
             this.ViolationDesc.Text = "Description of Violation of Academic Integrity Policy ED 5-0 with respect to a pa" +
     "rticular assignment or exam";
             // 
-            // richTextBox1
+            // ViolationReasonBox
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(39, 198);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(578, 96);
-            this.richTextBox1.TabIndex = 10;
-            this.richTextBox1.Text = "";
+            this.ViolationReasonBox.Location = new System.Drawing.Point(39, 198);
+            this.ViolationReasonBox.Name = "ViolationReasonBox";
+            this.ViolationReasonBox.Size = new System.Drawing.Size(578, 96);
+            this.ViolationReasonBox.TabIndex = 10;
+            this.ViolationReasonBox.Text = "";
             // 
             // label1
             // 
@@ -183,7 +183,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 592);
+            this.label3.Location = new System.Drawing.Point(27, 619);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(292, 13);
             this.label3.TabIndex = 13;
@@ -207,24 +207,15 @@
             this.label5.TabIndex = 15;
             this.label5.Text = "Date (yyyy-mm-dd)";
             // 
-            // button1
+            // nextPage
             // 
-            this.button1.Location = new System.Drawing.Point(327, 587);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Submit";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(327, 630);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Save";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.nextPage.Location = new System.Drawing.Point(494, 614);
+            this.nextPage.Name = "nextPage";
+            this.nextPage.Size = new System.Drawing.Size(75, 23);
+            this.nextPage.TabIndex = 16;
+            this.nextPage.Text = "next page";
+            this.nextPage.UseVisualStyleBackColor = true;
+            this.nextPage.Click += new System.EventHandler(this.NextBtn_Click);
             // 
             // NameTextBox
             // 
@@ -248,58 +239,63 @@
             this.EmailTextBox.Size = new System.Drawing.Size(259, 20);
             this.EmailTextBox.TabIndex = 3;
             // 
-            // textBox1
+            // FacultyName
             // 
-            this.textBox1.Location = new System.Drawing.Point(39, 99);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(120, 20);
-            this.textBox1.TabIndex = 4;
+            this.FacultyName.Location = new System.Drawing.Point(39, 99);
+            this.FacultyName.Name = "FacultyName";
+            this.FacultyName.Size = new System.Drawing.Size(120, 20);
+            this.FacultyName.TabIndex = 4;
             // 
-            // textBox3
+            // CourseNameAndNum
             // 
-            this.textBox3.Location = new System.Drawing.Point(431, 99);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(120, 20);
-            this.textBox3.TabIndex = 6;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.CourseNameAndNum.Location = new System.Drawing.Point(431, 99);
+            this.CourseNameAndNum.Name = "CourseNameAndNum";
+            this.CourseNameAndNum.Size = new System.Drawing.Size(120, 20);
+            this.CourseNameAndNum.TabIndex = 6;
+            this.CourseNameAndNum.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
-            // textBox4
+            // AssignmentNumOrExam
             // 
-            this.textBox4.Location = new System.Drawing.Point(39, 150);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(120, 20);
-            this.textBox4.TabIndex = 7;
+            this.AssignmentNumOrExam.Location = new System.Drawing.Point(39, 150);
+            this.AssignmentNumOrExam.Name = "AssignmentNumOrExam";
+            this.AssignmentNumOrExam.Size = new System.Drawing.Size(120, 20);
+            this.AssignmentNumOrExam.TabIndex = 7;
             // 
-            // textBox5
+            // DepartmentStudent
             // 
-            this.textBox5.Location = new System.Drawing.Point(202, 150);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(120, 20);
-            this.textBox5.TabIndex = 8;
+            this.DepartmentStudent.Location = new System.Drawing.Point(202, 150);
+            this.DepartmentStudent.Name = "DepartmentStudent";
+            this.DepartmentStudent.Size = new System.Drawing.Size(120, 20);
+            this.DepartmentStudent.TabIndex = 8;
             // 
-            // textBox6
+            // TermOrSemester
             // 
-            this.textBox6.Location = new System.Drawing.Point(397, 150);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(120, 20);
-            this.textBox6.TabIndex = 9;
+            this.TermOrSemester.Location = new System.Drawing.Point(397, 150);
+            this.TermOrSemester.Name = "TermOrSemester";
+            this.TermOrSemester.Size = new System.Drawing.Size(120, 20);
+            this.TermOrSemester.TabIndex = 9;
             // 
-            // textBox7
+            // FacultyMemberName
             // 
-            this.textBox7.Location = new System.Drawing.Point(29, 548);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(232, 20);
-            this.textBox7.TabIndex = 13;
+            this.FacultyMemberName.BackColor = System.Drawing.SystemColors.Window;
+            this.FacultyMemberName.Location = new System.Drawing.Point(29, 548);
+            this.FacultyMemberName.Name = "FacultyMemberName";
+            this.FacultyMemberName.Size = new System.Drawing.Size(232, 20);
+            this.FacultyMemberName.TabIndex = 13;
             // 
-            // dateTimePicker1
+            // FacultyDate
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(369, 548);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 14;
+            this.FacultyDate.CustomFormat = "yyyy-mm-dd";
+            this.FacultyDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.FacultyDate.Location = new System.Drawing.Point(369, 548);
+            this.FacultyDate.Name = "FacultyDate";
+            this.FacultyDate.Size = new System.Drawing.Size(200, 20);
+            this.FacultyDate.TabIndex = 14;
             // 
             // dateTimePicker2
             // 
+            this.dateTimePicker2.CustomFormat = "yyyy-mm-dd";
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker2.Location = new System.Drawing.Point(202, 99);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
@@ -308,6 +304,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
+            this.checkBox1.Cursor = System.Windows.Forms.Cursors.Default;
             this.checkBox1.Location = new System.Drawing.Point(577, 463);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(15, 14);
@@ -323,6 +320,16 @@
             this.checkBox2.TabIndex = 12;
             this.checkBox2.UseVisualStyleBackColor = true;
             // 
+            // SubmitBtn
+            // 
+            this.SubmitBtn.Location = new System.Drawing.Point(327, 614);
+            this.SubmitBtn.Name = "SubmitBtn";
+            this.SubmitBtn.Size = new System.Drawing.Size(75, 23);
+            this.SubmitBtn.TabIndex = 15;
+            this.SubmitBtn.Text = "Signed";
+            this.SubmitBtn.UseVisualStyleBackColor = true;
+            this.SubmitBtn.Click += new System.EventHandler(this.SignedBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -331,24 +338,24 @@
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.FacultyDate);
+            this.Controls.Add(this.FacultyMemberName);
+            this.Controls.Add(this.TermOrSemester);
+            this.Controls.Add(this.DepartmentStudent);
+            this.Controls.Add(this.AssignmentNumOrExam);
+            this.Controls.Add(this.CourseNameAndNum);
+            this.Controls.Add(this.FacultyName);
             this.Controls.Add(this.EmailTextBox);
             this.Controls.Add(this.IdTextBox);
             this.Controls.Add(this.NameTextBox);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.nextPage);
+            this.Controls.Add(this.SubmitBtn);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.ViolationReasonBox);
             this.Controls.Add(this.ViolationDesc);
             this.Controls.Add(this.TermOrSem);
             this.Controls.Add(this.Department);
@@ -377,27 +384,27 @@
         private System.Windows.Forms.Label Department;
         private System.Windows.Forms.Label TermOrSem;
         private System.Windows.Forms.Label ViolationDesc;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox ViolationReasonBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button nextPage;
         private System.Windows.Forms.TextBox NameTextBox;
         private System.Windows.Forms.TextBox IdTextBox;
         private System.Windows.Forms.TextBox EmailTextBox;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox FacultyName;
+        private System.Windows.Forms.TextBox CourseNameAndNum;
+        private System.Windows.Forms.TextBox AssignmentNumOrExam;
+        private System.Windows.Forms.TextBox DepartmentStudent;
+        private System.Windows.Forms.TextBox TermOrSemester;
+        private System.Windows.Forms.TextBox FacultyMemberName;
+        private System.Windows.Forms.DateTimePicker FacultyDate;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.Button SubmitBtn;
     }
 }
 
