@@ -38,6 +38,7 @@ namespace WindowsFormsApp1
         {
             this.Hide();
             Form2 form = new Form2();
+
             form.ShowDialog(this);
             
         }
@@ -73,8 +74,6 @@ namespace WindowsFormsApp1
                     checkbox.Enabled = false;
                 }
             }
-            StreamWriter sw = new StreamWriter("info.txt");
-            sw.WriteLine();
         }
 
     }
