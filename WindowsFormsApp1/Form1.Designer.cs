@@ -60,6 +60,7 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.SubmitBtn = new System.Windows.Forms.Button();
+            this.SaveBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Name
@@ -252,7 +253,6 @@
             this.CourseNameAndNum.Name = "CourseNameAndNum";
             this.CourseNameAndNum.Size = new System.Drawing.Size(120, 20);
             this.CourseNameAndNum.TabIndex = 6;
-            this.CourseNameAndNum.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // AssignmentNumOrExam
             // 
@@ -300,6 +300,7 @@
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker2.TabIndex = 5;
+            this.dateTimePicker2.Value = new System.DateTime(2023, 11, 11, 0, 0, 0, 0);
             // 
             // checkBox1
             // 
@@ -330,11 +331,22 @@
             this.SubmitBtn.UseVisualStyleBackColor = true;
             this.SubmitBtn.Click += new System.EventHandler(this.SignedBtn_Click);
             // 
+            // SaveBtn
+            // 
+            this.SaveBtn.Location = new System.Drawing.Point(409, 614);
+            this.SaveBtn.Name = "SaveBtn";
+            this.SaveBtn.Size = new System.Drawing.Size(75, 23);
+            this.SaveBtn.TabIndex = 17;
+            this.SaveBtn.Text = "Save";
+            this.SaveBtn.UseVisualStyleBackColor = true;
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(646, 665);
+            this.Controls.Add(this.SaveBtn);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.dateTimePicker2);
@@ -366,6 +378,7 @@
             this.Controls.Add(this.Email);
             this.Controls.Add(this.StudentNum);
             this.Controls.Add(this.Name);
+            //this.Name = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -405,6 +418,7 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.Button SubmitBtn;
+        private System.Windows.Forms.Button SaveBtn;
     }
 }
 

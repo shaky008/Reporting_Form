@@ -21,7 +21,7 @@ namespace WindowsFormsApp1
         {
             this.Hide();
             Form3 form = new Form3();
-            form.ShowDialog(this);
+            form.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)

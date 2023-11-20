@@ -55,14 +55,14 @@ namespace WindowsFormsApp1
         {
             this.Hide();
             Form4 form = new Form4();
-            form.ShowDialog(this);
+            form.ShowDialog();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             this.Hide();
             Form2 form = new Form2();
-            form.ShowDialog(this);
+            form.ShowDialog();
         }
 
        

@@ -33,7 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Form2StudentTxtBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -46,8 +46,8 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.MyTruEmail = new System.Windows.Forms.TextBox();
+            this.FacultyNameTextBox = new System.Windows.Forms.TextBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -56,6 +56,8 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.PreviousBtn = new System.Windows.Forms.Button();
             this.NextButton = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.Save_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -90,18 +92,15 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(29, 154);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(593, 117);
+            this.label4.Size = new System.Drawing.Size(0, 13);
             this.label4.TabIndex = 3;
-            this.label4.Text = resources.GetString("label4.Text");
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // textBox1
+            // Form2StudentTxtBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(41, 147);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(149, 20);
-            this.textBox1.TabIndex = 4;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.Form2StudentTxtBox.Location = new System.Drawing.Point(41, 147);
+            this.Form2StudentTxtBox.Name = "Form2StudentTxtBox";
+            this.Form2StudentTxtBox.Size = new System.Drawing.Size(149, 20);
+            this.Form2StudentTxtBox.TabIndex = 4;
             // 
             // label5
             // 
@@ -120,7 +119,6 @@
             this.label6.Size = new System.Drawing.Size(324, 13);
             this.label6.TabIndex = 6;
             this.label6.Text = "I have reviewed the information in the form as well as the evidence:";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
@@ -212,21 +210,20 @@
             this.label16.Size = new System.Drawing.Size(93, 13);
             this.label16.TabIndex = 16;
             this.label16.Text = "Date (yyyy-mm-dd)";
-            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
-            // textBox2
+            // MyTruEmail
             // 
-            this.textBox2.Location = new System.Drawing.Point(32, 333);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(231, 20);
-            this.textBox2.TabIndex = 17;
+            this.MyTruEmail.Location = new System.Drawing.Point(32, 333);
+            this.MyTruEmail.Name = "MyTruEmail";
+            this.MyTruEmail.Size = new System.Drawing.Size(231, 20);
+            this.MyTruEmail.TabIndex = 17;
             // 
-            // textBox3
+            // FacultyNameTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(180, 553);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(194, 20);
-            this.textBox3.TabIndex = 18;
+            this.FacultyNameTextBox.Location = new System.Drawing.Point(180, 553);
+            this.FacultyNameTextBox.Name = "FacultyNameTextBox";
+            this.FacultyNameTextBox.Size = new System.Drawing.Size(194, 20);
+            this.FacultyNameTextBox.TabIndex = 18;
             // 
             // radioButton1
             // 
@@ -308,11 +305,34 @@
             this.NextButton.UseVisualStyleBackColor = true;
             this.NextButton.Click += new System.EventHandler(this.NextButton_Click);
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(29, 154);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(593, 117);
+            this.label17.TabIndex = 29;
+            this.label17.Text = resources.GetString("label17.Text");
+            // 
+            // Save_btn
+            // 
+            this.Save_btn.Location = new System.Drawing.Point(309, 588);
+            this.Save_btn.Name = "Save_btn";
+            this.Save_btn.Size = new System.Drawing.Size(75, 23);
+            this.Save_btn.TabIndex = 30;
+            this.Save_btn.Text = "Save";
+            this.Save_btn.UseVisualStyleBackColor = true;
+            this.Save_btn.Click += new System.EventHandler(this.Save_btn_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(749, 637);
+            this.Controls.Add(this.Save_btn);
+            this.Controls.Add(this.Form2StudentTxtBox);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label17);
             this.Controls.Add(this.NextButton);
             this.Controls.Add(this.PreviousBtn);
             this.Controls.Add(this.dateTimePicker2);
@@ -321,8 +341,8 @@
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.FacultyNameTextBox);
+            this.Controls.Add(this.MyTruEmail);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
@@ -335,8 +355,6 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
@@ -354,7 +372,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Form2StudentTxtBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
@@ -367,8 +385,8 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox MyTruEmail;
+        private System.Windows.Forms.TextBox FacultyNameTextBox;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
@@ -377,5 +395,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Button PreviousBtn;
         private System.Windows.Forms.Button NextButton;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button Save_btn;
     }
 }

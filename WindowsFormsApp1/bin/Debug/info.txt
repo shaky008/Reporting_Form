@@ -1,0 +1,24 @@
+Bob
+12345
+bob@gmail.com
+Sam
+11/11/2023 12:00:00 AM
+Mngt1000
+3
+Science
+4
+dkfhalksdfjh alksdjfhaslkjg heoirughoerigh sldkfghsdoif guhsdflkgjhoirtgbasldkfhAKFJH
+True
+True
+sAM
+20/11/2023 1:07:13 AM
+===
+Ross
+True
+False
+ross@gmail.com
+20/11/2023 1:07:56 AM
+sdadfa
+20/11/2023 1:07:56 AM
++++
+
