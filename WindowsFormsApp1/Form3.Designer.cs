@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.SignedBtn = new System.Windows.Forms.Button();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.CommentTxBox = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
@@ -41,26 +41,31 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.DepartmentName = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.NoExplainRichTxtBox = new System.Windows.Forms.RichTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.NoExplain2 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.DeanName = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.Comment2 = new System.Windows.Forms.RichTextBox();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.Signed2 = new System.Windows.Forms.Button();
+            this.NextBtn = new System.Windows.Forms.Button();
+            this.PreviousBtn = new System.Windows.Forms.Button();
+            this.SaveBtnForm3 = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -72,23 +77,23 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Step Four - To be completed by the Department Chair";
             // 
-            // button1
+            // SignedBtn
             // 
-            this.button1.Location = new System.Drawing.Point(33, 276);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Signed";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.SignedBtn.Location = new System.Drawing.Point(33, 276);
+            this.SignedBtn.Name = "SignedBtn";
+            this.SignedBtn.Size = new System.Drawing.Size(75, 23);
+            this.SignedBtn.TabIndex = 1;
+            this.SignedBtn.Text = "Signed";
+            this.SignedBtn.UseVisualStyleBackColor = true;
+            this.SignedBtn.Click += new System.EventHandler(this.button1_Click);
             // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(167, 152);
+            this.radioButton1.Location = new System.Drawing.Point(6, 14);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(43, 17);
-            this.radioButton1.TabIndex = 2;
+            this.radioButton1.TabIndex = 1;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Yes";
             this.radioButton1.UseVisualStyleBackColor = true;
@@ -100,15 +105,15 @@
             this.dateTimePicker1.Location = new System.Drawing.Point(341, 276);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 3;
+            this.dateTimePicker1.TabIndex = 6;
             // 
-            // richTextBox1
+            // CommentTxBox
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(33, 210);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(614, 47);
-            this.richTextBox1.TabIndex = 4;
-            this.richTextBox1.Text = "";
+            this.CommentTxBox.Location = new System.Drawing.Point(33, 210);
+            this.CommentTxBox.Name = "CommentTxBox";
+            this.CommentTxBox.Size = new System.Drawing.Size(614, 47);
+            this.CommentTxBox.TabIndex = 4;
+            this.CommentTxBox.Text = "";
             // 
             // label2
             // 
@@ -131,10 +136,10 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(167, 172);
+            this.radioButton2.Location = new System.Drawing.Point(6, 29);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(39, 17);
-            this.radioButton2.TabIndex = 8;
+            this.radioButton2.TabIndex = 2;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "No";
             this.radioButton2.UseVisualStyleBackColor = true;
@@ -175,12 +180,12 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "Name of Department Chair";
             // 
-            // textBox2
+            // DepartmentName
             // 
-            this.textBox2.Location = new System.Drawing.Point(188, 276);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(142, 20);
-            this.textBox2.TabIndex = 13;
+            this.DepartmentName.Location = new System.Drawing.Point(175, 276);
+            this.DepartmentName.Name = "DepartmentName";
+            this.DepartmentName.Size = new System.Drawing.Size(142, 20);
+            this.DepartmentName.TabIndex = 5;
             // 
             // label8
             // 
@@ -191,13 +196,13 @@
             this.label8.TabIndex = 14;
             this.label8.Text = "Date (yyyy-mm-dd)";
             // 
-            // richTextBox2
+            // NoExplainRichTxtBox
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(219, 168);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(428, 23);
-            this.richTextBox2.TabIndex = 15;
-            this.richTextBox2.Text = "";
+            this.NoExplainRichTxtBox.Location = new System.Drawing.Point(219, 168);
+            this.NoExplainRichTxtBox.Name = "NoExplainRichTxtBox";
+            this.NoExplainRichTxtBox.Size = new System.Drawing.Size(428, 23);
+            this.NoExplainRichTxtBox.TabIndex = 3;
+            this.NoExplainRichTxtBox.Text = "";
             // 
             // label9
             // 
@@ -229,10 +234,10 @@
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(274, 526);
+            this.radioButton3.Location = new System.Drawing.Point(0, 33);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(39, 17);
-            this.radioButton3.TabIndex = 20;
+            this.radioButton3.TabIndex = 8;
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "No";
             this.radioButton3.UseVisualStyleBackColor = true;
@@ -240,10 +245,10 @@
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(274, 506);
+            this.radioButton4.Location = new System.Drawing.Point(0, 12);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(43, 17);
-            this.radioButton4.TabIndex = 19;
+            this.radioButton4.TabIndex = 7;
             this.radioButton4.TabStop = true;
             this.radioButton4.Text = "Yes";
             this.radioButton4.UseVisualStyleBackColor = true;
@@ -257,12 +262,12 @@
             this.label12.TabIndex = 21;
             this.label12.Text = "If you have checked \"no\", please explain";
             // 
-            // textBox1
+            // NoExplain2
             // 
-            this.textBox1.Location = new System.Drawing.Point(327, 522);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(311, 20);
-            this.textBox1.TabIndex = 22;
+            this.NoExplain2.Location = new System.Drawing.Point(327, 522);
+            this.NoExplain2.Name = "NoExplain2";
+            this.NoExplain2.Size = new System.Drawing.Size(311, 20);
+            this.NoExplain2.TabIndex = 9;
             // 
             // label13
             // 
@@ -273,12 +278,12 @@
             this.label13.TabIndex = 30;
             this.label13.Text = "Date (yyyy-mm-dd)";
             // 
-            // textBox3
+            // DeanName
             // 
-            this.textBox3.Location = new System.Drawing.Point(187, 614);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(142, 20);
-            this.textBox3.TabIndex = 29;
+            this.DeanName.Location = new System.Drawing.Point(187, 614);
+            this.DeanName.Name = "DeanName";
+            this.DeanName.Size = new System.Drawing.Size(142, 20);
+            this.DeanName.TabIndex = 11;
             // 
             // label14
             // 
@@ -307,13 +312,13 @@
             this.label16.TabIndex = 26;
             this.label16.Text = "Comment";
             // 
-            // richTextBox3
+            // Comment2
             // 
-            this.richTextBox3.Location = new System.Drawing.Point(32, 548);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(614, 47);
-            this.richTextBox3.TabIndex = 25;
-            this.richTextBox3.Text = "";
+            this.Comment2.Location = new System.Drawing.Point(32, 548);
+            this.Comment2.Name = "Comment2";
+            this.Comment2.Size = new System.Drawing.Size(614, 47);
+            this.Comment2.TabIndex = 10;
+            this.Comment2.Text = "";
             // 
             // dateTimePicker2
             // 
@@ -322,77 +327,111 @@
             this.dateTimePicker2.Location = new System.Drawing.Point(340, 614);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 24;
+            this.dateTimePicker2.TabIndex = 12;
             // 
-            // button2
+            // Signed2
             // 
-            this.button2.Location = new System.Drawing.Point(32, 614);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 23;
-            this.button2.Text = "Signed";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.Signed2.Location = new System.Drawing.Point(32, 614);
+            this.Signed2.Name = "Signed2";
+            this.Signed2.Size = new System.Drawing.Size(75, 23);
+            this.Signed2.TabIndex = 23;
+            this.Signed2.Text = "Signed";
+            this.Signed2.UseVisualStyleBackColor = true;
+            this.Signed2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // NextBtn
             // 
-            this.button3.Location = new System.Drawing.Point(572, 643);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 31;
-            this.button3.Text = "Next";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.NextBtn.Location = new System.Drawing.Point(572, 643);
+            this.NextBtn.Name = "NextBtn";
+            this.NextBtn.Size = new System.Drawing.Size(75, 23);
+            this.NextBtn.TabIndex = 31;
+            this.NextBtn.Text = "Next";
+            this.NextBtn.UseVisualStyleBackColor = true;
+            this.NextBtn.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button4
+            // PreviousBtn
             // 
-            this.button4.Location = new System.Drawing.Point(32, 643);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 32;
-            this.button4.Text = "Previous";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.PreviousBtn.Location = new System.Drawing.Point(32, 643);
+            this.PreviousBtn.Name = "PreviousBtn";
+            this.PreviousBtn.Size = new System.Drawing.Size(75, 23);
+            this.PreviousBtn.TabIndex = 32;
+            this.PreviousBtn.Text = "Previous";
+            this.PreviousBtn.UseVisualStyleBackColor = true;
+            this.PreviousBtn.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // SaveBtnForm3
+            // 
+            this.SaveBtnForm3.Location = new System.Drawing.Point(291, 643);
+            this.SaveBtnForm3.Name = "SaveBtnForm3";
+            this.SaveBtnForm3.Size = new System.Drawing.Size(75, 23);
+            this.SaveBtnForm3.TabIndex = 33;
+            this.SaveBtnForm3.Text = "Save";
+            this.SaveBtnForm3.UseVisualStyleBackColor = true;
+            this.SaveBtnForm3.Click += new System.EventHandler(this.SaveBtnForm3_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.radioButton2);
+            this.groupBox1.Location = new System.Drawing.Point(160, 139);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(50, 52);
+            this.groupBox1.TabIndex = 34;
+            this.groupBox1.TabStop = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.radioButton4);
+            this.groupBox2.Controls.Add(this.radioButton3);
+            this.groupBox2.Location = new System.Drawing.Point(273, 497);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(48, 48);
+            this.groupBox2.TabIndex = 35;
+            this.groupBox2.TabStop = false;
             // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(714, 676);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.SaveBtnForm3);
+            this.Controls.Add(this.PreviousBtn);
+            this.Controls.Add(this.NextBtn);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.DeanName);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.richTextBox3);
+            this.Controls.Add(this.Comment2);
             this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Signed2);
+            this.Controls.Add(this.NoExplain2);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.radioButton4);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.richTextBox2);
+            this.Controls.Add(this.NoExplainRichTxtBox);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.DepartmentName);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.CommentTxBox);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.SignedBtn);
             this.Controls.Add(this.label1);
             this.Name = "Form3";
             this.Text = "Form3";
+            this.Load += new System.EventHandler(this.Form3_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -401,10 +440,10 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button SignedBtn;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox CommentTxBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RadioButton radioButton2;
@@ -412,25 +451,28 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox DepartmentName;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox NoExplainRichTxtBox;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox NoExplain2;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox DeanName;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.RichTextBox richTextBox3;
+        private System.Windows.Forms.RichTextBox Comment2;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button Signed2;
+        private System.Windows.Forms.Button NextBtn;
+        private System.Windows.Forms.Button PreviousBtn;
+        private System.Windows.Forms.Button SaveBtnForm3;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

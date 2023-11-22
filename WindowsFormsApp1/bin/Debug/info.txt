@@ -1,24 +1,40 @@
 Bob
 12345
-bob@gmail.com
-Sam
-11/11/2023 12:00:00 AM
-Mngt1000
-3
-Science
-4
-dkfhalksdfjh alksdjfhaslkjg heoirughoerigh sldkfghsdoif guhsdflkgjhoirtgbasldkfhAKFJH
-True
-True
-sAM
-20/11/2023 1:07:13 AM
-===
+Bob.ca
 Ross
+11/11/2023 12:00:00 AM
+MAth1234
+4
+Math
+5
+Ever wondered how to simplify your workload when working on complex projects? Ever had issues deploying your multiple processes, assets, queues, storage buckets and other dependencies across environments? And let’s not even talk about keeping all of this up to date. That’s even more complicated.
+True
+True
+Ross
+21/11/2023 8:00:21 PM
+===
+Bob
 True
 False
-ross@gmail.com
-20/11/2023 1:07:56 AM
-sdadfa
-20/11/2023 1:07:56 AM
+bob.ca
+21/11/2023 8:00:53 PM
+Ross
+21/11/2023 8:00:53 PM
 +++
-
+True
+False
+Ever wondered how to simplify your workload when working on complex projects? Ever had issues deploying your multiple processes, assets, queues, storage buckets and other dependencies across environments? And let’s not even talk about keeping all of this up to date. That’s even more complicated.
+Ever wondered how to simplify your workload when working on complex projects? Ever had issues deploying your multiple processes, assets, queues, storage buckets and other dependencies across environments? And let’s not even talk about keeping all of this up to date. That’s even more complicated.
+Bob
+21/11/2023 8:01:13 PM
+True
+False
+That’s even more complicated.
+Ever wondered how to simplify your workload when working on complex projects? Ever had issues deploying your multiple processes, assets, queues, storage buckets and other dependencies across environments? And let’s not even talk about keeping all of this up to date. That’s even more complicated.
+Ross
+21/11/2023 8:01:13 PM
+---
+Ever wondered how to simplify your workload when working on complex projects? Ever had issues deploying your multiple processes, assets, queues, storage buckets and other dependencies across environments? And let’s not even talk about keeping all of this up to date. That’s even more complicated.
+Ever wondered how to simplify your workload when working on complex projects? Ever had issues deploying your multiple processes, assets, queues, storage buckets and other dependencies across environments? And let’s not even talk about keeping all of this up to date. That’s even more complicated.
+Ever wondered how to simplify your workload when working on complex projects? Ever had issues deploying your multiple processes, assets, queues, storage buckets and other dependencies across environments? And let’s not even talk about keeping all of this up to date. That’s even more complicated.
+Ever wondered how to simplify your workload when working on complex projects? Ever had issues deploying your multiple processes, assets, queues, storage buckets and other dependencies across environments? And let’s not even talk about keeping all of this up to date. That’s even more complicated.

@@ -10,12 +10,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Runtime.CompilerServices;
 
 namespace WindowsFormsApp1
 {
     public partial class Form2 : Form
     {
         int currentLine;
+        string filePath = "info.txt";
 
         public Form2()
         {
@@ -61,50 +63,58 @@ namespace WindowsFormsApp1
 
         private void SaveData()
         {
-            StreamWriter sw = new StreamWriter("info.txt", true);
+            if (File.Exists(filePath))
+            {
+                StreamWriter sw = new StreamWriter(filePath, true);
 
-            sw.WriteLine(Form2StudentTxtBox.Text);
-            sw.WriteLine(radioButton2.Checked);
-            sw.WriteLine(radioButton1.Checked);
-            sw.WriteLine(MyTruEmail.Text);
-            sw.WriteLine(dateTimePicker1.Value.ToString());
-            sw.WriteLine(FacultyNameTextBox.Text);
-            sw.WriteLine(dateTimePicker2.Value.ToString());
-            sw.WriteLine("+++");
-            sw.Close();
+                sw.WriteLine(Form2StudentTxtBox.Text);
+                sw.WriteLine(radioButton2.Checked);
+                sw.WriteLine(radioButton1.Checked);
+                sw.WriteLine(MyTruEmail.Text);
+                sw.WriteLine(dateTimePicker1.Value.ToString());
+                sw.WriteLine(FacultyNameTextBox.Text);
+                sw.WriteLine(dateTimePicker2.Value.ToString());
+                sw.WriteLine("+++");
+                sw.Close();
+            }
+          
         }
 
         private void LoadData()
         {
-            string filePath = "info.txt";
-            try
+            if (File.Exists(filePath))
             {
-                using (var reader = File.OpenText("info.txt"))
+                try
                 {
-                    while (reader.ReadLine() != "===")
+                    using (var reader = File.OpenText(filePath))
                     {
-                        currentLine++;
+                        while (reader.ReadLine() != "===")
+                        {
+                            currentLine++;
+                        }
                     }
-                }
-                StreamReader sr = new StreamReader(filePath);
+                    StreamReader sr = new StreamReader(filePath);
 
-             
-                for(int i =0; i<currentLine+1;i++)
-                {
-                    sr.ReadLine();
+
+                    for (int i = 0; i < currentLine + 1; i++)
+                    {
+                        sr.ReadLine();
+                    }
+                    Form2StudentTxtBox.Text = sr.ReadLine();
+                    radioButton2.Checked = bool.Parse(sr.ReadLine());
+                    radioButton1.Checked = bool.Parse(sr.ReadLine());
+                    MyTruEmail.Text = sr.ReadLine();
+                    dateTimePicker1.Value = DateTime.Parse(sr.ReadLine());
+                    FacultyNameTextBox.Text = sr.ReadLine();
+                    dateTimePicker2.Value = DateTime.Parse(sr.ReadLine());
+                    sr.Close();
                 }
-                Form2StudentTxtBox.Text = sr.ReadLine();
-                radioButton2.Checked = bool.Parse(sr.ReadLine());
-                radioButton1.Checked = bool.Parse(sr.ReadLine());
-                MyTruEmail.Text = sr.ReadLine();
-                dateTimePicker1.Value = DateTime.Parse(sr.ReadLine());
-                FacultyNameTextBox.Text = sr.ReadLine();
-                dateTimePicker2.Value = DateTime.Parse(sr.ReadLine());
-                sr.Close();
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
             }
-            catch (Exception e) {
-                MessageBox.Show("File the Form");
-            }
+                
 
         }
 

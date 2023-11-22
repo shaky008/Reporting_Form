@@ -13,7 +13,7 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
-
+        string filePath = "info.txt";
         public Form1()
         {
             InitializeComponent();
@@ -50,9 +50,7 @@ namespace WindowsFormsApp1
 
         private void saveData()
         {
-            string filePath = "info.txt";
-            if(File.Exists(filePath))
-            {
+            
                 StreamWriter sw = new StreamWriter(filePath, true);
 
                 sw.WriteLine(NameTextBox.Text);
@@ -71,7 +69,7 @@ namespace WindowsFormsApp1
                 sw.WriteLine(FacultyDate.Value);
                 sw.WriteLine("===");
                 sw.Close();
-            }
+            
           
         }
 
@@ -105,12 +103,12 @@ namespace WindowsFormsApp1
 
         private void loadData()
         {
-            string filepath = "info.txt";
-            if (File.Exists(filepath))
+           
+            if (File.Exists(filePath))
             {
                 try
                 {
-                    StreamReader sr = new StreamReader(filepath);
+                    StreamReader sr = new StreamReader(filePath);
                     NameTextBox.Text = sr.ReadLine();
                     IdTextBox.Text = sr.ReadLine();
                     EmailTextBox.Text = sr.ReadLine();
