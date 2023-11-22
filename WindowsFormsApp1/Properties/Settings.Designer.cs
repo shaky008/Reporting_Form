@@ -22,5 +22,77 @@ namespace WindowsFormsApp1.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Form1LockState {
+            get {
+                return ((bool)(this["Form1LockState"]));
+            }
+            set {
+                this["Form1LockState"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Form2LockState {
+            get {
+                return ((bool)(this["Form2LockState"]));
+            }
+            set {
+                this["Form2LockState"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Form2LockState2 {
+            get {
+                return ((bool)(this["Form2LockState2"]));
+            }
+            set {
+                this["Form2LockState2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Form3LockState {
+            get {
+                return ((bool)(this["Form3LockState"]));
+            }
+            set {
+                this["Form3LockState"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Form3LockState2 {
+            get {
+                return ((bool)(this["Form3LockState2"]));
+            }
+            set {
+                this["Form3LockState2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Form4LockState {
+            get {
+                return ((bool)(this["Form4LockState"]));
+            }
+            set {
+                this["Form4LockState"] = value;
+            }
+        }
     }
 }

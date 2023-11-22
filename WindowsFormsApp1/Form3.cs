@@ -23,6 +23,16 @@ namespace WindowsFormsApp1
         private void Form3_Load(object sender, EventArgs e)
         {
             loadData();
+            if(Properties.Settings.Default.Form3LockState)
+            {
+                LockData1();
+            }
+
+            if(Properties.Settings.Default.Form3LockState2)
+            {
+                LockData2();
+            }
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -51,11 +61,14 @@ namespace WindowsFormsApp1
 
         private void SaveBtnForm3_Click(object sender, EventArgs e)
         {
-            saveData();
+            SaveData();
         }
 
         private void LockData1()
         {
+            Properties.Settings.Default.Form3LockState = true;
+            Properties.Settings.Default.Save();
+
             radioButton1.Enabled = false;
             radioButton2.Enabled = false;
 
@@ -73,6 +86,9 @@ namespace WindowsFormsApp1
 
         private void LockData2()
         {
+            Properties.Settings.Default.Form3LockState2 = true;
+            Properties.Settings.Default.Save();
+
             radioButton3.Enabled = false;
             radioButton4.Enabled = false;
 
@@ -88,7 +104,7 @@ namespace WindowsFormsApp1
             dateTimePicker2.Enabled = false;
         }
 
-        private void saveData()
+        private void SaveData()
         {
             
             if (File.Exists(filePath))

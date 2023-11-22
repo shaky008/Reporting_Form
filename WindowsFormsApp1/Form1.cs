@@ -22,17 +22,12 @@ namespace WindowsFormsApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            loadData();
-        }
+            LoadData();
 
-        private void StudentNum_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void IdTextBox_TextChanged(object sender, EventArgs e)
-        {
-
+            if (Properties.Settings.Default.Form1LockState)
+            {
+                LockData();
+            }
         }
 
         private void NextBtn_Click(object sender, EventArgs e)
@@ -45,10 +40,12 @@ namespace WindowsFormsApp1
 
         private void SignedBtn_Click(object sender, EventArgs e)
         {
-            lockData();
+            LockData();
+            Properties.Settings.Default.Form1LockState = true;
+            Properties.Settings.Default.Save();
         }
 
-        private void saveData()
+        private void SaveData()
         {
             
                 StreamWriter sw = new StreamWriter(filePath, true);
@@ -73,7 +70,7 @@ namespace WindowsFormsApp1
           
         }
 
-        private void lockData()
+        private void LockData()
         {
             foreach (Control contorl in this.Controls)
             {
@@ -99,9 +96,10 @@ namespace WindowsFormsApp1
                     checkbox.Enabled = false;
                 }
             }
+            
         }
 
-        private void loadData()
+        private void LoadData()
         {
            
             if (File.Exists(filePath))
@@ -140,7 +138,12 @@ namespace WindowsFormsApp1
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-            saveData();
+            SaveData();
         }
+
+        
     }
 }
+
+//reference
+//https://www.youtube.com/watch?v=7to8KHsXspE&t=199s

@@ -36,6 +36,7 @@ namespace WindowsFormsApp1
         private void SaveBtn_Click(object sender, EventArgs e)
         {
             SaveData();
+            
         }
         private void Form4_Load(object sender, EventArgs e)
         {

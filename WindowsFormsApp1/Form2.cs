@@ -27,6 +27,16 @@ namespace WindowsFormsApp1
         private void Form2_Load(object sender, EventArgs e)
         {
             LoadData();
+
+            if(Properties.Settings.Default.Form2LockState)
+            {
+                StudentLockData();
+            }
+
+            if(Properties.Settings.Default.Form2LockState2)
+            {
+                LockDataFaculty();
+            }
         }
 
         private void SignedStudent_Click(object sender, EventArgs e)
@@ -120,6 +130,9 @@ namespace WindowsFormsApp1
 
         private void StudentLockData()
         {
+            Properties.Settings.Default.Form2LockState = true;
+            Properties.Settings.Default.Save();
+
             Form2StudentTxtBox.ReadOnly = true;
             Form2StudentTxtBox.BackColor = Color.Gray;
 
@@ -130,15 +143,21 @@ namespace WindowsFormsApp1
 
             radioButton1.Enabled = false;
             radioButton2.Enabled = false;
+
+            
         }
 
         private void LockDataFaculty()
         {
+
+            Properties.Settings.Default.Form2LockState2 = true;
+            Properties.Settings.Default.Save();
+
             FacultyNameTextBox.ReadOnly = true;
             FacultyNameTextBox.BackColor = Color.Gray;
 
             dateTimePicker2.Enabled = false;
-            
+
         }
 
     }

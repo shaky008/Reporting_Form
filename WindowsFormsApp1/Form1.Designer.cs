@@ -80,7 +80,7 @@
             this.StudentNum.Size = new System.Drawing.Size(84, 13);
             this.StudentNum.TabIndex = 1;
             this.StudentNum.Text = "Student Number";
-            this.StudentNum.Click += new System.EventHandler(this.StudentNum_Click);
+          
             // 
             // Email
             // 
@@ -162,6 +162,7 @@
             this.ViolationReasonBox.Size = new System.Drawing.Size(578, 96);
             this.ViolationReasonBox.TabIndex = 10;
             this.ViolationReasonBox.Text = "";
+           
             // 
             // label1
             // 
@@ -231,7 +232,7 @@
             this.IdTextBox.Name = "IdTextBox";
             this.IdTextBox.Size = new System.Drawing.Size(120, 20);
             this.IdTextBox.TabIndex = 2;
-            this.IdTextBox.TextChanged += new System.EventHandler(this.IdTextBox_TextChanged);
+           
             // 
             // EmailTextBox
             // 
