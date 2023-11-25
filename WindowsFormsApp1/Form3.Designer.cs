@@ -60,10 +60,9 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.Signed2 = new System.Windows.Forms.Button();
             this.NextBtn = new System.Windows.Forms.Button();
-            this.PreviousBtn = new System.Windows.Forms.Button();
-            this.SaveBtnForm3 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.Home = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -182,7 +181,7 @@
             // 
             // DepartmentName
             // 
-            this.DepartmentName.Location = new System.Drawing.Point(175, 276);
+            this.DepartmentName.Location = new System.Drawing.Point(188, 276);
             this.DepartmentName.Name = "DepartmentName";
             this.DepartmentName.Size = new System.Drawing.Size(142, 20);
             this.DepartmentName.TabIndex = 5;
@@ -341,33 +340,13 @@
             // 
             // NextBtn
             // 
-            this.NextBtn.Location = new System.Drawing.Point(572, 643);
+            this.NextBtn.Location = new System.Drawing.Point(563, 641);
             this.NextBtn.Name = "NextBtn";
             this.NextBtn.Size = new System.Drawing.Size(75, 23);
             this.NextBtn.TabIndex = 31;
-            this.NextBtn.Text = "Next";
+            this.NextBtn.Text = "Submit";
             this.NextBtn.UseVisualStyleBackColor = true;
             this.NextBtn.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // PreviousBtn
-            // 
-            this.PreviousBtn.Location = new System.Drawing.Point(32, 643);
-            this.PreviousBtn.Name = "PreviousBtn";
-            this.PreviousBtn.Size = new System.Drawing.Size(75, 23);
-            this.PreviousBtn.TabIndex = 32;
-            this.PreviousBtn.Text = "Previous";
-            this.PreviousBtn.UseVisualStyleBackColor = true;
-            this.PreviousBtn.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // SaveBtnForm3
-            // 
-            this.SaveBtnForm3.Location = new System.Drawing.Point(291, 643);
-            this.SaveBtnForm3.Name = "SaveBtnForm3";
-            this.SaveBtnForm3.Size = new System.Drawing.Size(75, 23);
-            this.SaveBtnForm3.TabIndex = 33;
-            this.SaveBtnForm3.Text = "Save";
-            this.SaveBtnForm3.UseVisualStyleBackColor = true;
-            this.SaveBtnForm3.Click += new System.EventHandler(this.SaveBtnForm3_Click);
             // 
             // groupBox1
             // 
@@ -389,16 +368,25 @@
             this.groupBox2.TabIndex = 35;
             this.groupBox2.TabStop = false;
             // 
+            // Home
+            // 
+            this.Home.Location = new System.Drawing.Point(32, 643);
+            this.Home.Name = "Home";
+            this.Home.Size = new System.Drawing.Size(75, 23);
+            this.Home.TabIndex = 36;
+            this.Home.Text = "Home";
+            this.Home.UseVisualStyleBackColor = true;
+            this.Home.Click += new System.EventHandler(this.Home_Click);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(714, 676);
+            this.Controls.Add(this.Home);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.SaveBtnForm3);
-            this.Controls.Add(this.PreviousBtn);
             this.Controls.Add(this.NextBtn);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.DeanName);
@@ -470,9 +458,8 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Button Signed2;
         private System.Windows.Forms.Button NextBtn;
-        private System.Windows.Forms.Button PreviousBtn;
-        private System.Windows.Forms.Button SaveBtnForm3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button Home;
     }
 }

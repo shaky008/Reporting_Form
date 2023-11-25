@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*
+ * File: Form2.cs
+ * Description: This file contains the code for Form2 of the Windows Forms application.
+ */
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,26 +20,32 @@ namespace WindowsFormsApp1
 {
     public partial class Form2 : Form
     {
+        //variable for counting line in file, the filePath and form lockings respectively
         int currentLine;
         string filePath = "info.txt";
+        bool isLocked, isLocked2;
 
         public Form2()
         {
             InitializeComponent();
+            LoadData();
         }
 
+        //loads the data when the form is opened
         private void Form2_Load(object sender, EventArgs e)
         {
-            LoadData();
-
-            if(Properties.Settings.Default.Form2LockState)
+           if (File.Exists(filePath))
             {
-                StudentLockData();
-            }
-
-            if(Properties.Settings.Default.Form2LockState2)
-            {
-                LockDataFaculty();
+                
+                if (isLocked)
+                {
+                    StudentLockData();
+                    
+                }
+                if(isLocked2)
+                {
+                    LockDataFaculty();
+                }
             }
         }
 
@@ -48,26 +58,22 @@ namespace WindowsFormsApp1
         private void SignedFaculty_Click(object sender, EventArgs e)
         {
             LockDataFaculty();
-        }
-
-        private void PreviousBtn_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form1 form = new Form1();
-            form.ShowDialog();
+            SaveData();
         }
 
         private void NextButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form3 form = new Form3();
-            form.ShowDialog();
-        }
-
-        private void Save_btn_Click(object sender, EventArgs e)
-        {
-            SaveData();
-            
+            if (isLocked && isLocked2)
+            {
+                MessageBox.Show("Form Submitted");
+                this.Hide();
+                Form0 form = new Form0();
+                form.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Save and Sign to continue");
+            }
 
         }
 
@@ -75,8 +81,10 @@ namespace WindowsFormsApp1
         {
             if (File.Exists(filePath))
             {
+                //creates a streamWriter to write data to the file
                 StreamWriter sw = new StreamWriter(filePath, true);
 
+                //writes data from the users to the text file
                 sw.WriteLine(Form2StudentTxtBox.Text);
                 sw.WriteLine(radioButton2.Checked);
                 sw.WriteLine(radioButton1.Checked);
@@ -96,6 +104,7 @@ namespace WindowsFormsApp1
             {
                 try
                 {
+                    //reads the file and increment each line before it reaches "==="
                     using (var reader = File.OpenText(filePath))
                     {
                         while (reader.ReadLine() != "===")
@@ -103,13 +112,15 @@ namespace WindowsFormsApp1
                             currentLine++;
                         }
                     }
+                    //creates StreamReadaer to read the file
                     StreamReader sr = new StreamReader(filePath);
 
-
+                    //reads the line until the currentline+1 (skip)
                     for (int i = 0; i < currentLine + 1; i++)
                     {
                         sr.ReadLine();
                     }
+                    //starts reading after "==="from the textfile and populate form contorls
                     Form2StudentTxtBox.Text = sr.ReadLine();
                     radioButton2.Checked = bool.Parse(sr.ReadLine());
                     radioButton1.Checked = bool.Parse(sr.ReadLine());
@@ -117,22 +128,29 @@ namespace WindowsFormsApp1
                     dateTimePicker1.Value = DateTime.Parse(sr.ReadLine());
                     FacultyNameTextBox.Text = sr.ReadLine();
                     dateTimePicker2.Value = DateTime.Parse(sr.ReadLine());
+                    
+                    //sets the bool values to true if the file reads "+++"
+                    if(sr.ReadLine() == "+++")
+                    {
+                        isLocked = true;
+                        isLocked2 = true;
+                    }
                     sr.Close();
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show(e.Message);
+                    MessageBox.Show("File the form");
                 }
             }
                 
 
         }
 
+        //makes the first part of the controls in the form as readOnly
         private void StudentLockData()
         {
-            Properties.Settings.Default.Form2LockState = true;
-            Properties.Settings.Default.Save();
-
+            isLocked = true;
+           
             Form2StudentTxtBox.ReadOnly = true;
             Form2StudentTxtBox.BackColor = Color.Gray;
 
@@ -147,12 +165,10 @@ namespace WindowsFormsApp1
             
         }
 
+        //makes the second part of the controls in the form as readOnly
         private void LockDataFaculty()
         {
-
-            Properties.Settings.Default.Form2LockState2 = true;
-            Properties.Settings.Default.Save();
-
+            isLocked2 = true;
             FacultyNameTextBox.ReadOnly = true;
             FacultyNameTextBox.BackColor = Color.Gray;
 
@@ -160,8 +176,19 @@ namespace WindowsFormsApp1
 
         }
 
+        //Returns to home without saving
+        private void Home_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form0 form0 = new Form0();
+            form0.ShowDialog();
+        }
+
+     
+
+
     }
 }
 
-//reference
-//https://stackoverflow.com/questions/119559/determine-the-number-of-lines-within-a-text-file
+
+

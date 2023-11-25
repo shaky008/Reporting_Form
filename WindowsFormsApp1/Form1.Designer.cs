@@ -60,7 +60,7 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.SubmitBtn = new System.Windows.Forms.Button();
-            this.SaveBtn = new System.Windows.Forms.Button();
+            this.Home = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Name
@@ -80,7 +80,6 @@
             this.StudentNum.Size = new System.Drawing.Size(84, 13);
             this.StudentNum.TabIndex = 1;
             this.StudentNum.Text = "Student Number";
-          
             // 
             // Email
             // 
@@ -162,7 +161,6 @@
             this.ViolationReasonBox.Size = new System.Drawing.Size(578, 96);
             this.ViolationReasonBox.TabIndex = 10;
             this.ViolationReasonBox.Text = "";
-           
             // 
             // label1
             // 
@@ -176,7 +174,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(39, 348);
+            this.label2.Location = new System.Drawing.Point(36, 339);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(531, 169);
             this.label2.TabIndex = 12;
@@ -185,7 +183,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 619);
+            this.label3.Location = new System.Drawing.Point(21, 574);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(292, 13);
             this.label3.TabIndex = 13;
@@ -194,7 +192,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(27, 528);
+            this.label4.Location = new System.Drawing.Point(36, 518);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(143, 13);
             this.label4.TabIndex = 14;
@@ -203,7 +201,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(366, 528);
+            this.label5.Location = new System.Drawing.Point(366, 518);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(93, 13);
             this.label5.TabIndex = 15;
@@ -215,7 +213,7 @@
             this.nextPage.Name = "nextPage";
             this.nextPage.Size = new System.Drawing.Size(75, 23);
             this.nextPage.TabIndex = 16;
-            this.nextPage.Text = "next page";
+            this.nextPage.Text = "Submit";
             this.nextPage.UseVisualStyleBackColor = true;
             this.nextPage.Click += new System.EventHandler(this.NextBtn_Click);
             // 
@@ -232,7 +230,6 @@
             this.IdTextBox.Name = "IdTextBox";
             this.IdTextBox.Size = new System.Drawing.Size(120, 20);
             this.IdTextBox.TabIndex = 2;
-           
             // 
             // EmailTextBox
             // 
@@ -279,7 +276,7 @@
             // FacultyMemberName
             // 
             this.FacultyMemberName.BackColor = System.Drawing.SystemColors.Window;
-            this.FacultyMemberName.Location = new System.Drawing.Point(29, 548);
+            this.FacultyMemberName.Location = new System.Drawing.Point(39, 534);
             this.FacultyMemberName.Name = "FacultyMemberName";
             this.FacultyMemberName.Size = new System.Drawing.Size(232, 20);
             this.FacultyMemberName.TabIndex = 13;
@@ -288,7 +285,7 @@
             // 
             this.FacultyDate.CustomFormat = "yyyy-mm-dd";
             this.FacultyDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FacultyDate.Location = new System.Drawing.Point(369, 548);
+            this.FacultyDate.Location = new System.Drawing.Point(369, 534);
             this.FacultyDate.Name = "FacultyDate";
             this.FacultyDate.Size = new System.Drawing.Size(200, 20);
             this.FacultyDate.TabIndex = 14;
@@ -324,7 +321,7 @@
             // 
             // SubmitBtn
             // 
-            this.SubmitBtn.Location = new System.Drawing.Point(327, 614);
+            this.SubmitBtn.Location = new System.Drawing.Point(319, 569);
             this.SubmitBtn.Name = "SubmitBtn";
             this.SubmitBtn.Size = new System.Drawing.Size(75, 23);
             this.SubmitBtn.TabIndex = 15;
@@ -332,22 +329,22 @@
             this.SubmitBtn.UseVisualStyleBackColor = true;
             this.SubmitBtn.Click += new System.EventHandler(this.SignedBtn_Click);
             // 
-            // SaveBtn
+            // Home
             // 
-            this.SaveBtn.Location = new System.Drawing.Point(409, 614);
-            this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.Size = new System.Drawing.Size(75, 23);
-            this.SaveBtn.TabIndex = 17;
-            this.SaveBtn.Text = "Save";
-            this.SaveBtn.UseVisualStyleBackColor = true;
-            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
+            this.Home.Location = new System.Drawing.Point(42, 613);
+            this.Home.Name = "Home";
+            this.Home.Size = new System.Drawing.Size(75, 23);
+            this.Home.TabIndex = 17;
+            this.Home.Text = "Home";
+            this.Home.UseVisualStyleBackColor = true;
+            this.Home.Click += new System.EventHandler(this.Home_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(646, 665);
-            this.Controls.Add(this.SaveBtn);
+            this.Controls.Add(this.Home);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.dateTimePicker2);
@@ -419,7 +416,7 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.Button SubmitBtn;
-        private System.Windows.Forms.Button SaveBtn;
+        private System.Windows.Forms.Button Home;
     }
 }
 

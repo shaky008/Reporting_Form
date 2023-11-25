@@ -54,10 +54,9 @@
             this.SignStudent = new System.Windows.Forms.Button();
             this.SignedFaculty = new System.Windows.Forms.Button();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.PreviousBtn = new System.Windows.Forms.Button();
             this.NextButton = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
-            this.Save_btn = new System.Windows.Forms.Button();
+            this.Home = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -285,23 +284,13 @@
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker2.TabIndex = 26;
             // 
-            // PreviousBtn
-            // 
-            this.PreviousBtn.Location = new System.Drawing.Point(35, 588);
-            this.PreviousBtn.Name = "PreviousBtn";
-            this.PreviousBtn.Size = new System.Drawing.Size(75, 23);
-            this.PreviousBtn.TabIndex = 27;
-            this.PreviousBtn.Text = "Previous";
-            this.PreviousBtn.UseVisualStyleBackColor = true;
-            this.PreviousBtn.Click += new System.EventHandler(this.PreviousBtn_Click);
-            // 
             // NextButton
             // 
             this.NextButton.Location = new System.Drawing.Point(517, 588);
             this.NextButton.Name = "NextButton";
             this.NextButton.Size = new System.Drawing.Size(75, 23);
             this.NextButton.TabIndex = 28;
-            this.NextButton.Text = "Next";
+            this.NextButton.Text = "Submit";
             this.NextButton.UseVisualStyleBackColor = true;
             this.NextButton.Click += new System.EventHandler(this.NextButton_Click);
             // 
@@ -314,27 +303,26 @@
             this.label17.TabIndex = 29;
             this.label17.Text = resources.GetString("label17.Text");
             // 
-            // Save_btn
+            // Home
             // 
-            this.Save_btn.Location = new System.Drawing.Point(309, 588);
-            this.Save_btn.Name = "Save_btn";
-            this.Save_btn.Size = new System.Drawing.Size(75, 23);
-            this.Save_btn.TabIndex = 30;
-            this.Save_btn.Text = "Save";
-            this.Save_btn.UseVisualStyleBackColor = true;
-            this.Save_btn.Click += new System.EventHandler(this.Save_btn_Click);
+            this.Home.Location = new System.Drawing.Point(35, 588);
+            this.Home.Name = "Home";
+            this.Home.Size = new System.Drawing.Size(75, 23);
+            this.Home.TabIndex = 30;
+            this.Home.Text = "Home";
+            this.Home.UseVisualStyleBackColor = true;
+            this.Home.Click += new System.EventHandler(this.Home_Click_1);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(749, 637);
-            this.Controls.Add(this.Save_btn);
+            this.Controls.Add(this.Home);
             this.Controls.Add(this.Form2StudentTxtBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.NextButton);
-            this.Controls.Add(this.PreviousBtn);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.SignedFaculty);
             this.Controls.Add(this.SignStudent);
@@ -393,9 +381,8 @@
         private System.Windows.Forms.Button SignStudent;
         private System.Windows.Forms.Button SignedFaculty;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Button PreviousBtn;
         private System.Windows.Forms.Button NextButton;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Button Save_btn;
+        private System.Windows.Forms.Button Home;
     }
 }

@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*
+ * File: Form3.cs
+ * Description: This file contains the code for Form3 of the Windows Forms application.
+ */
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,23 +19,30 @@ namespace WindowsFormsApp1
     {
         int currentLine;
         string filePath = "info.txt";
+        bool isLocked, isLocked2;
         public Form3()
         {
             InitializeComponent();
+            LoadData();
         }
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            loadData();
-            if(Properties.Settings.Default.Form3LockState)
-            {
-                LockData1();
-            }
+            if(File.Exists(filePath))
+            { 
+                if(isLocked)
+                {
+                    LockData1();
+                    
+                }
 
-            if(Properties.Settings.Default.Form3LockState2)
-            {
-                LockData2();
+                if(isLocked2)
+                {
+                    LockData2();
+                }
+                
             }
+            
 
         }
 
@@ -43,31 +54,23 @@ namespace WindowsFormsApp1
         private void button2_Click(object sender, EventArgs e)
         {
             LockData2();
+            SaveData();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form4 form = new Form4();
-            form.ShowDialog();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form2 form = new Form2();
-            form.ShowDialog();
-        }
-
-        private void SaveBtnForm3_Click(object sender, EventArgs e)
-        {
-            SaveData();
+            if (isLocked && isLocked2)
+            {
+                MessageBox.Show("Form Submitted");
+                this.Hide();
+                Form0 form = new Form0();
+                form.ShowDialog();
+            }
         }
 
         private void LockData1()
         {
-            Properties.Settings.Default.Form3LockState = true;
-            Properties.Settings.Default.Save();
+            isLocked = true;
 
             radioButton1.Enabled = false;
             radioButton2.Enabled = false;
@@ -84,10 +87,10 @@ namespace WindowsFormsApp1
             dateTimePicker1.Enabled = false;
         }
 
+        //makes form contorl of second part readOnly
         private void LockData2()
-        {
-            Properties.Settings.Default.Form3LockState2 = true;
-            Properties.Settings.Default.Save();
+        {            
+            isLocked2 = true;
 
             radioButton3.Enabled = false;
             radioButton4.Enabled = false;
@@ -109,6 +112,7 @@ namespace WindowsFormsApp1
             
             if (File.Exists(filePath))
             {
+                //creates StreamWriter to write from Form controls to text file
                 StreamWriter sw = new StreamWriter(filePath, true);
                 sw.WriteLine(radioButton1.Checked);
                 sw.WriteLine(radioButton2.Checked);
@@ -127,12 +131,22 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void loadData()
+        //returns home menu without saveing
+        private void Home_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form0 form0 = new Form0();
+            form0.ShowDialog();
+        }
+
+        //Loads data from text file
+        private void LoadData()
         {
             if (File.Exists(filePath))
             {
                 try 
                 {
+                    //increments currentline before reaching the value "+++"
                     using(var reader = File.OpenText(filePath))
                     {
                         while(reader.ReadLine() !="+++")
@@ -140,13 +154,16 @@ namespace WindowsFormsApp1
                             currentLine++;
                         }
                     }
+                    //creates a StreamReader to read file
                     StreamReader sr = new StreamReader(filePath);
 
+                    //readline until currentLine
                     for(int i = 0; i < currentLine+1; i++)
                     {
                         sr.ReadLine();
                     }
 
+                    //starts reading after "+++" and populate From's contorls
                     radioButton1.Checked = bool.Parse(sr.ReadLine());
                     radioButton2.Checked = bool.Parse(sr.ReadLine());
                     NoExplainRichTxtBox.Text = sr.ReadLine();
@@ -159,11 +176,18 @@ namespace WindowsFormsApp1
                     Comment2.Text = sr.ReadLine();
                     DeanName.Text = sr.ReadLine();
                     dateTimePicker2.Value = DateTime.Parse(sr.ReadLine());
+
+                    //sets bool value to true if --- is read
+                    if(sr.ReadLine() == "---")
+                    {
+                        isLocked = true;
+                        isLocked2 = true;
+                    }
                     sr.Close();
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show(e.Message);
+                    MessageBox.Show("File the form");
                 }
             }
         }

@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*
+ * File: Form1.cs
+ * Description: This file contains the code for Form1 of the Windows Forms application.
+ */
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,65 +17,87 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
+        //variable for file path and form locking
         string filePath = "info.txt";
+        bool isLocked;
+   
+
+
         public Form1()
         {
             InitializeComponent();
+            LoadData();
         }
-
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            LoadData();
 
-            if (Properties.Settings.Default.Form1LockState)
+
+            if (File.Exists(filePath))
             {
-                LockData();
+                if(isLocked)
+                {
+                    LockData();
+                }
             }
         }
 
+        //hides the current Form and Opens The home Menu Form
         private void NextBtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form2 form = new Form2();
-            form.ShowDialog();
+            //checks if file is is signed or not (islocked)
+            if (isLocked)
+            {
+                MessageBox.Show("Form Submitted");
+                this.Hide();
+                Form0 form = new Form0();
+                form.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Sign first to continue");
+            }
 
         }
 
+        //saves and locks the Form on Click
         private void SignedBtn_Click(object sender, EventArgs e)
         {
             LockData();
-            Properties.Settings.Default.Form1LockState = true;
-            Properties.Settings.Default.Save();
+            SaveData();
         }
 
+        //saves users data into a text file
         private void SaveData()
         {
-            
-                StreamWriter sw = new StreamWriter(filePath, true);
+            //creates StreamWriter to write user data from Form contorls to the file
+            StreamWriter sw = new StreamWriter(filePath, true);
 
-                sw.WriteLine(NameTextBox.Text);
-                sw.WriteLine(IdTextBox.Text);
-                sw.WriteLine(EmailTextBox.Text);
-                sw.WriteLine(FacultyName.Text);
-                sw.WriteLine(dateTimePicker2.Value.ToString());
-                sw.WriteLine(CourseNameAndNum.Text);
-                sw.WriteLine(AssignmentNumOrExam.Text);
-                sw.WriteLine(DepartmentStudent.Text);
-                sw.WriteLine(TermOrSemester.Text);
-                sw.WriteLine(ViolationReasonBox.Text);
-                sw.WriteLine(checkBox1.Checked);
-                sw.WriteLine(checkBox2.Checked);
-                sw.WriteLine(FacultyMemberName.Text);
-                sw.WriteLine(FacultyDate.Value);
-                sw.WriteLine("===");
-                sw.Close();
-            
-          
+            sw.WriteLine(NameTextBox.Text);
+            sw.WriteLine(IdTextBox.Text);
+            sw.WriteLine(EmailTextBox.Text);
+            sw.WriteLine(FacultyName.Text);
+            sw.WriteLine(dateTimePicker2.Value.ToString());
+            sw.WriteLine(CourseNameAndNum.Text);
+            sw.WriteLine(AssignmentNumOrExam.Text);
+            sw.WriteLine(DepartmentStudent.Text);
+            sw.WriteLine(TermOrSemester.Text);
+            sw.WriteLine(ViolationReasonBox.Text);
+            sw.WriteLine(checkBox1.Checked);
+            sw.WriteLine(checkBox2.Checked);
+            sw.WriteLine(FacultyMemberName.Text);
+            sw.WriteLine(FacultyDate.Value);
+            sw.WriteLine("===");
+            sw.Close();
+
+
         }
 
+        //makes all the components readOnly, locking for users to make changes 
         private void LockData()
         {
+            isLocked = true;
+
             foreach (Control contorl in this.Controls)
             {
                 if (contorl is TextBox textbox)
@@ -99,6 +125,7 @@ namespace WindowsFormsApp1
             
         }
 
+        //loads all the data stored in the text file
         private void LoadData()
         {
            
@@ -106,7 +133,10 @@ namespace WindowsFormsApp1
             {
                 try
                 {
+                    //creates a StreamReader to read the file
                     StreamReader sr = new StreamReader(filePath);
+
+                    //reads texts lines one by one and populate its value to contorls in the from
                     NameTextBox.Text = sr.ReadLine();
                     IdTextBox.Text = sr.ReadLine();
                     EmailTextBox.Text = sr.ReadLine();
@@ -121,6 +151,13 @@ namespace WindowsFormsApp1
                     checkBox2.Checked = bool.Parse(sr.ReadLine());
                     FacultyMemberName.Text = sr.ReadLine();
                     FacultyDate.Value = DateTime.Parse(sr.ReadLine());
+
+                    //if file reads "===" set the bool value true
+                    if(sr.ReadLine() == "===")
+                    {
+                        isLocked = true;
+                    }
+
                     sr.Close();
                 }
                 catch (Exception e)
@@ -129,21 +166,16 @@ namespace WindowsFormsApp1
                 }
 
             }
-            else
-            {
-                MessageBox.Show("No file detected, File your form");
-            }
+            
 
         }
 
-        private void SaveBtn_Click(object sender, EventArgs e)
+        //Returns to home without saving
+        private void Home_Click(object sender, EventArgs e)
         {
-            SaveData();
+            this.Hide();
+            Form0 form0 = new Form0();
+            form0.ShowDialog();
         }
-
-        
     }
 }
-
-//reference
-//https://www.youtube.com/watch?v=7to8KHsXspE&t=199s
